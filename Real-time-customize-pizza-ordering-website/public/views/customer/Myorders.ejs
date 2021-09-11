@@ -1,0 +1,29 @@
+<html>
+    <link( href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,300' rel='stylesheet' type='text/css' )  >
+<link href="/css/Myorderes.css" rel="stylesheet" type="text/css">
+    <body>
+        <section>
+            <section class="allOrders">
+                <h5 style="visibility: hidden; font-size: 0%">ORDER DETAILS</h5>    
+                <% for(let pizza of Object.values(.items)) { %>
+                <section class="myOrder">
+                    <img class="orderIMG" src="/img/pizza.png">
+                    <ul class="orderDescription">
+                        <li class="orderName"><h3><%= pizza.item.name %></h3></li>
+                        <li class="orderSize">Medium</li>
+                        <li class="orderIngredientsL1"><i>Onion, Tomato, Mushroom</i></li>
+                        <li class="orderIngredientsL1"><i>Capsicum, Red Paprika</i></li>
+                        <li class="orderIngredientsL3"><i>Jalapeno, Olive</i></li> 
+                    </ul>    
+                    <p class="orderQuantity">
+                        <%= pizza.qty %>
+                    </p>
+                    <p class="orderPrice"> 
+                        ₹<%= pizza.item.price * pizza.qty%>
+                    </p>
+                </section>
+                <% } %>
+            </section>
+        </section>
+    </body>
+</html>
